@@ -1,5 +1,6 @@
 import os
 import sys
+import requests
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
@@ -9,27 +10,33 @@ from zoneinfo import ZoneInfo
 import json
 import time
 
-# --- NEW: Import the advanced TLS spoofing library ---
-from curl_cffi import requests
-
 # 1. Setup & Auth
 client = genai.Client()
 FILE_NAME = "upcoming_fights.ics"
 
+# Retrieve our proxy key from GitHub secrets
+SCRAPERAPI_KEY = os.environ.get("SCRAPERAPI_KEY")
+
+def get_stealth_url(target_url):
+    """Wraps the target URL through ScraperAPI to bypass Cloudflare blocks"""
+    if not SCRAPERAPI_KEY:
+        print("⚠️ Warning: SCRAPERAPI_KEY missing. Attempting direct connection...")
+        return target_url
+    return f"http://api.scraperapi.com?api_key={SCRAPERAPI_KEY}&url={target_url}"
+
 # 2. Fetch the LIVE links from the website
-print("1. Fetching live schedule from website...")
+print("1. Fetching live schedule from website via Proxy...")
 url = "https://box.live/upcoming-fights-schedule/"
 
 try:
-    # Impersonate the exact cryptographic signature of Chrome
-    response = requests.get(url, impersonate="chrome")
+    response = requests.get(get_stealth_url(url))
 except Exception as e:
     print(f"❌ FATAL ERROR: Request failed entirely: {e}")
     sys.exit(1)
 
 # --- THE FAILSAFE ---
 if response.status_code != 200:
-    print(f"❌ FATAL ERROR: The website blocked our connection (Status {response.status_code}).")
+    print(f"❌ FATAL ERROR: Proxy failed or website blocked connection (Status {response.status_code}).")
     print("Aborting script to protect existing calendar data.")
     sys.exit(1)
 
@@ -72,12 +79,14 @@ if new_links:
     for i, link in enumerate(new_links, 1):
         print(f"   [{i}/{len(new_links)}] Downloading: {link}")
         try:
-            # Use the stealth impersonator for the deep links too
-            page_resp = requests.get(link, impersonate="chrome")
-            page_soup = BeautifulSoup(page_resp.text, "html.parser")
-            page_text = page_soup.get_text(separator=" ", strip=True)
-            new_scraped_pages.append({"link": link, "text": page_text})
-            time.sleep(0.5)
+            page_resp = requests.get(get_stealth_url(link))
+            if page_resp.status_code == 200:
+                page_soup = BeautifulSoup(page_resp.text, "html.parser")
+                page_text = page_soup.get_text(separator=" ", strip=True)
+                new_scraped_pages.append({"link": link, "text": page_text})
+            else:
+                print(f"   ⚠️ Failed to download {link} (Status {page_resp.status_code})")
+            time.sleep(0.2)
         except Exception as e:
             print(f"   Error downloading {link}: {e}")
 
