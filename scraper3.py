@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
 from ics import Calendar, Event
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 import json
 import time
