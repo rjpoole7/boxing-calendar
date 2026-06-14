@@ -2,14 +2,16 @@ name: Update Boxing Calendar
 
 on:
   schedule:
+    # This triggers the script every day at midnight UTC
     - cron: '0 0 * * *'
-  workflow_dispatch:
+  workflow_dispatch: # Allows you to manually run it
 
 env:
+  # Forces GitHub to use the updated Node.js 24 environment to prevent warnings
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
-  contents: write
+  contents: write # Allows GitHub to save the .ics file back to the repo
 
 jobs:
   scrape-and-update:
@@ -29,8 +31,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-     - name: Run Scraper Script
+    - name: Run Scraper Script
       env:
+        # Pulls your secure keys from GitHub Secrets into the script
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
       run: python scraper3.py
@@ -40,4 +43,5 @@ jobs:
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
         git add upcoming_fights.ics
+        # This line checks if the file actually changed. If it did, it saves it. If it didn't, it skips saving.
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update calendar data [skip ci]" && git push)
