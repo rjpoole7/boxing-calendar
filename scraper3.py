@@ -1,6 +1,7 @@
 import os
 import sys
 import requests
+import urllib.parse
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
@@ -14,29 +15,45 @@ import time
 client = genai.Client()
 FILE_NAME = "upcoming_fights.ics"
 
-# Retrieve our proxy key from GitHub secrets
 SCRAPERAPI_KEY = os.environ.get("SCRAPERAPI_KEY")
 
 def get_stealth_url(target_url):
-    """Wraps the target URL through ScraperAPI to bypass Cloudflare blocks"""
+    """Wraps the target URL through ScraperAPI with JS rendering to bypass Cloudflare"""
     if not SCRAPERAPI_KEY:
         print("⚠️ Warning: SCRAPERAPI_KEY missing. Attempting direct connection...")
         return target_url
-    return f"http://api.scraperapi.com?api_key={SCRAPERAPI_KEY}&url={target_url}"
+    
+    # URL Encoding prevents the proxy router from getting confused by special characters
+    encoded_url = urllib.parse.quote(target_url)
+    
+    # render=true tells the proxy to wait for the Cloudflare Javascript check to pass
+    return f"http://api.scraperapi.com?api_key={SCRAPERAPI_KEY}&url={encoded_url}&render=true"
 
 # 2. Fetch the LIVE links from the website
 print("1. Fetching live schedule from website via Proxy...")
 url = "https://box.live/upcoming-fights-schedule/"
 
-try:
-    response = requests.get(get_stealth_url(url))
-except Exception as e:
-    print(f"❌ FATAL ERROR: Request failed entirely: {e}")
-    sys.exit(1)
+# --- NEW: PROXY RETRY LOOP ---
+response = None
+for attempt in range(3):
+    try:
+        print(f"   Attempt {attempt + 1} to bypass Cloudflare...")
+        # A 60-second timeout allows the proxy enough time to solve the JS challenge
+        response = requests.get(get_stealth_url(url), timeout=60)
+        
+        if response.status_code == 200:
+            print("   ✅ Successfully bypassed Cloudflare!")
+            break
+        else:
+            print(f"   ⚠️ Proxy hiccup (Status {response.status_code}). Retrying...")
+            time.sleep(5)
+    except Exception as e:
+        print(f"   ⚠️ Connection error: {e}. Retrying...")
+        time.sleep(5)
 
 # --- THE FAILSAFE ---
-if response.status_code != 200:
-    print(f"❌ FATAL ERROR: Proxy failed or website blocked connection (Status {response.status_code}).")
+if not response or response.status_code != 200:
+    print(f"❌ FATAL ERROR: Proxy failed completely after 3 attempts.")
     print("Aborting script to protect existing calendar data.")
     sys.exit(1)
 
@@ -54,7 +71,7 @@ for a in soup.find_all("a", href=True):
 # 3. Read the EXISTING calendar to find what we already know
 existing_events = {}
 if os.path.exists(FILE_NAME):
-    print("2. Found existing calendar. Checking for known fights...")
+    print("\n2. Found existing calendar. Checking for known fights...")
     with open(FILE_NAME, "r", encoding="utf-8") as f:
         try:
             old_cal = Calendar(f.read())
@@ -64,7 +81,7 @@ if os.path.exists(FILE_NAME):
         except Exception as e:
             print(f"   Could not read old calendar cleanly, starting fresh. ({e})")
 else:
-    print("2. No existing calendar found. A new one will be created.")
+    print("\n2. No existing calendar found. A new one will be created.")
 
 # 4. Figure out exactly what is NEW
 new_links = [link for link in live_fight_links if link not in existing_events]
@@ -78,17 +95,29 @@ if new_links:
     print("\n3. Downloading data for NEW fights only...")
     for i, link in enumerate(new_links, 1):
         print(f"   [{i}/{len(new_links)}] Downloading: {link}")
-        try:
-            page_resp = requests.get(get_stealth_url(link))
-            if page_resp.status_code == 200:
-                page_soup = BeautifulSoup(page_resp.text, "html.parser")
-                page_text = page_soup.get_text(separator=" ", strip=True)
-                new_scraped_pages.append({"link": link, "text": page_text})
-            else:
-                print(f"   ⚠️ Failed to download {link} (Status {page_resp.status_code})")
-            time.sleep(0.2)
-        except Exception as e:
-            print(f"   Error downloading {link}: {e}")
+        
+        # --- NEW: RETRY LOOP FOR DEEP LINKS ---
+        success = False
+        for attempt in range(3):
+            try:
+                page_resp = requests.get(get_stealth_url(link), timeout=60)
+                if page_resp.status_code == 200:
+                    page_soup = BeautifulSoup(page_resp.text, "html.parser")
+                    page_text = page_soup.get_text(separator=" ", strip=True)
+                    new_scraped_pages.append({"link": link, "text": page_text})
+                    success = True
+                    break
+                else:
+                    print(f"      ⚠️ Proxy hiccup ({page_resp.status_code}). Retrying...")
+                    time.sleep(3)
+            except Exception as e:
+                print(f"      ⚠️ Error: {e}. Retrying...")
+                time.sleep(3)
+                
+        if not success:
+            print(f"   ❌ Failed to download {link} after 3 attempts. Skipping for now.")
+        
+        time.sleep(1)
 
 # 6. Process NEW links through Gemini
 new_extracted_events = []
