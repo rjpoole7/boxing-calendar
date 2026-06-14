@@ -2,12 +2,14 @@ name: Update Boxing Calendar
 
 on:
   schedule:
-    # This triggers the script every day at midnight UTC
     - cron: '0 0 * * *'
-  workflow_dispatch: # This allows you to manually run the script whenever you want
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
-  contents: write # Allows GitHub to save the updated .ics file back to your repo
+  contents: write
 
 jobs:
   scrape-and-update:
