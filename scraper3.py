@@ -1,7 +1,6 @@
 import os
 import sys
 import requests
-import urllib.parse
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
@@ -17,29 +16,30 @@ FILE_NAME = "upcoming_fights.ics"
 
 SCRAPERAPI_KEY = os.environ.get("SCRAPERAPI_KEY")
 
-def get_stealth_url(target_url):
-    """Wraps the target URL through ScraperAPI with JS rendering to bypass Cloudflare"""
+def fetch_stealth_html(target_url):
+    """Safely constructs the proxy request using Premium Residential IPs to bypass Cloudflare"""
     if not SCRAPERAPI_KEY:
         print("⚠️ Warning: SCRAPERAPI_KEY missing. Attempting direct connection...")
-        return target_url
+        return requests.get(target_url, timeout=30)
+        
+    payload = {
+        'api_key': SCRAPERAPI_KEY,
+        'url': target_url,
+        'premium': 'true' # Forces a residential home IP. Cloudflare completely ignores these!
+    }
     
-    # URL Encoding prevents the proxy router from getting confused by special characters
-    encoded_url = urllib.parse.quote(target_url)
-    
-    # render=true tells the proxy to wait for the Cloudflare Javascript check to pass
-    return f"http://api.scraperapi.com?api_key={SCRAPERAPI_KEY}&url={encoded_url}&render=true"
+    # Passing 'params' lets the requests library handle all the URL encoding perfectly
+    return requests.get('http://api.scraperapi.com', params=payload, timeout=60)
 
 # 2. Fetch the LIVE links from the website
-print("1. Fetching live schedule from website via Proxy...")
+print("1. Fetching live schedule from website via Residential Proxy...")
 url = "https://box.live/upcoming-fights-schedule/"
 
-# --- NEW: PROXY RETRY LOOP ---
 response = None
 for attempt in range(3):
     try:
         print(f"   Attempt {attempt + 1} to bypass Cloudflare...")
-        # A 60-second timeout allows the proxy enough time to solve the JS challenge
-        response = requests.get(get_stealth_url(url), timeout=60)
+        response = fetch_stealth_html(url)
         
         if response.status_code == 200:
             print("   ✅ Successfully bypassed Cloudflare!")
@@ -96,11 +96,10 @@ if new_links:
     for i, link in enumerate(new_links, 1):
         print(f"   [{i}/{len(new_links)}] Downloading: {link}")
         
-        # --- NEW: RETRY LOOP FOR DEEP LINKS ---
         success = False
         for attempt in range(3):
             try:
-                page_resp = requests.get(get_stealth_url(link), timeout=60)
+                page_resp = fetch_stealth_html(link)
                 if page_resp.status_code == 200:
                     page_soup = BeautifulSoup(page_resp.text, "html.parser")
                     page_text = page_soup.get_text(separator=" ", strip=True)
