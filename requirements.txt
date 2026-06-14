@@ -1,5 +1,4 @@
-requests
 beautifulsoup4
 google-genai
 ics
-cloudscraper
+curl-cffi
