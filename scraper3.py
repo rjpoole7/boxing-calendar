@@ -9,27 +9,25 @@ from zoneinfo import ZoneInfo
 import json
 import time
 
-# --- NEW: Import the stealth scraper ---
-import cloudscraper
+# --- NEW: Import the advanced TLS spoofing library ---
+from curl_cffi import requests
 
 # 1. Setup & Auth
 client = genai.Client()
 FILE_NAME = "upcoming_fights.ics"
 
-# Create a scraper that pretends to be a normal desktop Chrome browser
-scraper = cloudscraper.create_scraper(browser={
-    'browser': 'chrome',
-    'platform': 'windows',
-    'desktop': True
-})
-
 # 2. Fetch the LIVE links from the website
 print("1. Fetching live schedule from website...")
 url = "https://box.live/upcoming-fights-schedule/"
-response = scraper.get(url)
 
-# --- NEW: THE FAILSAFE ---
-# If the website blocks us, abort the script so we don't wipe out the existing calendar!
+try:
+    # Impersonate the exact cryptographic signature of Chrome
+    response = requests.get(url, impersonate="chrome")
+except Exception as e:
+    print(f"❌ FATAL ERROR: Request failed entirely: {e}")
+    sys.exit(1)
+
+# --- THE FAILSAFE ---
 if response.status_code != 200:
     print(f"❌ FATAL ERROR: The website blocked our connection (Status {response.status_code}).")
     print("Aborting script to protect existing calendar data.")
@@ -74,8 +72,8 @@ if new_links:
     for i, link in enumerate(new_links, 1):
         print(f"   [{i}/{len(new_links)}] Downloading: {link}")
         try:
-            # Use the stealth scraper for the deep links too
-            page_resp = scraper.get(link)
+            # Use the stealth impersonator for the deep links too
+            page_resp = requests.get(link, impersonate="chrome")
             page_soup = BeautifulSoup(page_resp.text, "html.parser")
             page_text = page_soup.get_text(separator=" ", strip=True)
             new_scraped_pages.append({"link": link, "text": page_text})
@@ -83,7 +81,7 @@ if new_links:
         except Exception as e:
             print(f"   Error downloading {link}: {e}")
 
-# 6. Process NEW links through Gemini using the updated SDK
+# 6. Process NEW links through Gemini
 new_extracted_events = []
 if new_scraped_pages:
     print("\n4. Processing new fights through Gemini...")
