@@ -1,5 +1,5 @@
 import os
-import requests
+import sys
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
@@ -9,20 +9,32 @@ from zoneinfo import ZoneInfo
 import json
 import time
 
-# 1. Setup & Auth
-# On GitHub Actions, the API key is passed directly via the environment
-client = genai.Client()
+# --- NEW: Import the stealth scraper ---
+import cloudscraper
 
-headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+# 1. Setup & Auth
+client = genai.Client()
 FILE_NAME = "upcoming_fights.ics"
 
+# Create a scraper that pretends to be a normal desktop Chrome browser
+scraper = cloudscraper.create_scraper(browser={
+    'browser': 'chrome',
+    'platform': 'windows',
+    'desktop': True
+})
 
-# ==========================================
-# STEP 2: FIND ALL LIVE FIGHTS ON THE WEBSITE
-# ==========================================
+# 2. Fetch the LIVE links from the website
 print("1. Fetching live schedule from website...")
 url = "https://box.live/upcoming-fights-schedule/"
-response = requests.get(url, headers=headers)
+response = scraper.get(url)
+
+# --- NEW: THE FAILSAFE ---
+# If the website blocks us, abort the script so we don't wipe out the existing calendar!
+if response.status_code != 200:
+    print(f"❌ FATAL ERROR: The website blocked our connection (Status {response.status_code}).")
+    print("Aborting script to protect existing calendar data.")
+    sys.exit(1)
+
 soup = BeautifulSoup(response.text, "html.parser")
 
 live_fight_links = []
@@ -34,9 +46,7 @@ for a in soup.find_all("a", href=True):
         if href not in live_fight_links:
             live_fight_links.append(href)
 
-# ==========================================
-# STEP 3: READ YOUR EXISTING CALENDAR
-# ==========================================
+# 3. Read the EXISTING calendar to find what we already know
 existing_events = {}
 if os.path.exists(FILE_NAME):
     print("2. Found existing calendar. Checking for known fights...")
@@ -51,57 +61,32 @@ if os.path.exists(FILE_NAME):
 else:
     print("2. No existing calendar found. A new one will be created.")
 
-# ==========================================
-# STEP 4: DECIDE WHICH FIGHTS NEED GEMINI
-# ==========================================
-# We only want to use Gemini on BRAND NEW fights, or fights happening 
-# in the next 14 days (so we get updated undercards).
-links_to_process = []
-now_utc = datetime.now(timezone.utc)
-UPDATE_WINDOW_DAYS = 14
+# 4. Figure out exactly what is NEW
+new_links = [link for link in live_fight_links if link not in existing_events]
+print(f"-> Site has {len(live_fight_links)} total fights.")
+print(f"-> We already have {len(existing_events)} saved.")
+print(f"-> {len(new_links)} fights are brand new and need processing.")
 
-for link in live_fight_links:
-    if link not in existing_events:
-        links_to_process.append(link) # It's a new fight
-    else:
-        try:
-            event = existing_events[link]
-            event_date = event.begin.datetime if hasattr(event.begin, 'datetime') else event.begin
-            time_difference = event_date - now_utc
-            
-            # If the fight is happening soon, refresh it!
-            if -1 <= time_difference.days <= UPDATE_WINDOW_DAYS:
-                links_to_process.append(link)
-        except Exception:
-            pass
-
-print(f"-> Site has {len(live_fight_links)} total fights listed.")
-print(f"-> We already have {len(existing_events)} saved in your calendar.")
-print(f"-> {len(links_to_process)} fights will be processed (new + upcoming refreshes).")
-
-# ==========================================
-# STEP 5: DOWNLOAD TEXT FOR THE REQUIRED FIGHTS
-# ==========================================
+# 5. Scrape ONLY the new links
 new_scraped_pages = []
-if links_to_process:
-    print("\n3. Downloading data for required fights...")
-    for i, link in enumerate(links_to_process, 1):
-        print(f"   [{i}/{len(links_to_process)}] Downloading: {link}")
+if new_links:
+    print("\n3. Downloading data for NEW fights only...")
+    for i, link in enumerate(new_links, 1):
+        print(f"   [{i}/{len(new_links)}] Downloading: {link}")
         try:
-            page_resp = requests.get(link, headers=headers)
+            # Use the stealth scraper for the deep links too
+            page_resp = scraper.get(link)
             page_soup = BeautifulSoup(page_resp.text, "html.parser")
             page_text = page_soup.get_text(separator=" ", strip=True)
             new_scraped_pages.append({"link": link, "text": page_text})
-            time.sleep(0.2)
+            time.sleep(0.5)
         except Exception as e:
             print(f"   Error downloading {link}: {e}")
 
-# ==========================================
-# STEP 6: USE GEMINI TO EXTRACT THE DATA
-# ==========================================
+# 6. Process NEW links through Gemini using the updated SDK
 new_extracted_events = []
 if new_scraped_pages:
-    print("\n4. Processing fights through Gemini...")
+    print("\n4. Processing new fights through Gemini...")
 
     prompt_template = """
     You are a sports data extractor. Look at the text extracted from multiple boxing event pages separated by markers.
@@ -131,7 +116,6 @@ if new_scraped_pages:
         max_retries = 3
         for attempt in range(max_retries):
             try:
-                # Using 2.5-flash to avoid strict rate limits
                 result = client.models.generate_content(
                     model="gemini-2.5-flash",
                     contents=prompt_template + combined_text,
@@ -146,6 +130,7 @@ if new_scraped_pages:
                 
             except Exception as api_err:
                 print(f"   ❌ Batch failed on attempt {attempt + 1}: {api_err}")
+                
                 if attempt < max_retries - 1:
                     print("   ⏳ Waiting 60 seconds for Google's quota to reset before trying again...")
                     time.sleep(60)
@@ -156,18 +141,18 @@ if new_scraped_pages:
             print("   ⏳ Pausing 30 seconds before the next batch to respect rate limits...")
             time.sleep(30)
 
-# ==========================================
-# STEP 7: ASSEMBLE THE FINAL CALENDAR
-# ==========================================
+# 7. Build the Final Synced Calendar
 print("\n5. Assembling the synced calendar...")
 final_cal = Calendar()
 aest_tz = ZoneInfo("Australia/Sydney")
 
 processed_new_events = {item.get("url"): item for item in new_extracted_events if item.get("url")}
 
-# A. Add all live fights (using fresh data if we have it, or old data if we don't)
 for link in live_fight_links:
-    if link in processed_new_events:
+    if link in existing_events:
+        final_cal.events.add(existing_events[link])
+        
+    elif link in processed_new_events:
         item = processed_new_events[link]
         try:
             if not item.get("date") or item["date"] == "YYYY-MM-DD":
@@ -214,20 +199,10 @@ for link in live_fight_links:
             final_cal.events.add(e)
             
         except Exception as err:
-            print(f"   Error formatting event {link}: {err}")
-            
-    elif link in existing_events:
-        final_cal.events.add(existing_events[link])
+            print(f"   Error formatting new event {link}: {err}")
 
-# B. Keep historical events (fights that happened and were removed from the site)
-for link, old_event in existing_events.items():
-    if link not in live_fight_links:
-        final_cal.events.add(old_event)
-
-# ==========================================
-# STEP 8: SAVE TO FILE
-# ==========================================
+# 8. Save the state
 with open(FILE_NAME, "w", encoding="utf-8") as f:
     f.writelines(final_cal.serialize_iter())
 
-print(f"\nSuccess! '{FILE_NAME}' is completely synced and updated with the live website.")
+print(f"\nSuccess! '{FILE_NAME}' is completely synced with the live website.")
