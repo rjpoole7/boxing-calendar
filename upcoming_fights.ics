@@ -263,6 +263,15 @@ UID:6ee43bd1-fede-46b5-aa01-97316b0eb5d7@6ee4.org
 URL:https://box.live/fights/england-vs-zaurbek/
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/mercado-vs-burgos/\n📺 Broadcasters: DAZN\n📍 Venue: Motor City Casino\, Detroit\n⏰ Start Time: Saturday\, 20 Jun at 09:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Ernesto Mercado vs Juan Carlos Burgos\n
+DTEND:20260620T043000Z
+LOCATION:Motor City Casino\, Detroit
+DTSTART:20260619T230000Z
+SUMMARY:Ashton Sylve vs Joseph ‘Jo Jo’ Diaz
+UID:0938f212-9a88-4fd6-ba2f-54fb9a58ae50@0938.org
+URL:https://box.live/fights/mercado-vs-burgos/
+END:VEVENT
+BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/gassiev-vs-yoka/\n📺 Broadcasters: YouTube\n📍 Venue: VTB Arena\, Moscow\, Russia\n⏰ Start Time: Sunday\, 12 Jul at 06:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Artem Suslenkov vs Joe Joyce\n
 DTEND:20260712T013000Z
 LOCATION:VTB Arena\, Moscow\, Russia
