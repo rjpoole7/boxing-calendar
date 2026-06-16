@@ -20,6 +20,24 @@ UID:37555898-084a-4042-bfc5-dd9496ff95d3@3755.org
 URL:https://box.live/fights/trinidad-vs-ancajas/
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/gonzalez-vs-alameda/\n📺 Broadcasters: DAZN\n📍 Venue: Dignity Health Sports Park\, Carson\, United States\n⏰ Start Time: Sunday\, 19 Jul at 11:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Albert Gonzalez vs Aaron Alameda\n- Andy Cruz vs Albert Bell\n
+DTEND:20260719T063000Z
+LOCATION:Dignity Health Sports Park\, Carson\, United States
+DTSTART:20260719T010000Z
+SUMMARY:Diego Pacheco vs Immanuwel Aleem
+UID:496c7a35-c424-4ea8-a2ea-37ec0c06daa3@496c.org
+URL:https://box.live/fights/gonzalez-vs-alameda/
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/bell-vs-cruz/\n📺 Broadcasters: DAZN\n📍 Venue: Dignity Health Sports Park\, Carson\, United States\n⏰ Start Time: Sunday\, 19 Jul at 12:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Andy Cruz vs Albert Bell\n- Albert Gonzalez vs Aaron Alameda\n
+DTEND:20260719T073000Z
+LOCATION:Dignity Health Sports Park\, Carson\, United States
+DTSTART:20260719T020000Z
+SUMMARY:Diego Pacheco vs Immanuwel Aleem
+UID:c151784c-d04a-401e-9d44-d45178c135cb@c151.org
+URL:https://box.live/fights/bell-vs-cruz/
+END:VEVENT
+BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/oleary-vs-chamberlain/\n📺 Broadcasters: DAZN\n📍 Venue: 3Arena\, Dublin\, Ireland\n⏰ Start Time: Sunday\, 02 Aug at 07:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
 DTEND:20260802T023000Z
 LOCATION:3Arena\, Dublin\, Ireland
@@ -162,6 +180,15 @@ DTSTART:20260705T010000Z
 SUMMARY:Abdullah Mason vs Joe Cordina
 UID:66407523-1103-4a54-b039-20b412289e1d@6640.org
 URL:https://box.live/fights/johnson-vs-guerrero/
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/gallardo-vs-bisla/\n📺 Broadcasters: DAZN\n📍 Venue: Frontwave Arena\, Oceanside\, United States\n⏰ Start Time: Sunday\, 21 Jun at 12:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Yair Benjamin Gallardo Lozano vs Buneet Bisla\n
+DTEND:20260621T073000Z
+LOCATION:Frontwave Arena\, Oceanside\, United States
+DTSTART:20260621T020000Z
+SUMMARY:Oscar Collazo vs Joey Canoy
+UID:ecd3860c-c018-4367-92e6-2048383760ce@ecd3.org
+URL:https://box.live/fights/gallardo-vs-bisla/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/muratalla-vs-conceicao/\n📺 Broadcasters: DAZN\n📍 Venue: The Theater at Virgin Hotels\, Las Vegas\, United States\n⏰ Start Time: Saturday\, 01 Aug at 12:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Lamont Roach vs William Zepeda\n
@@ -315,15 +342,6 @@ DTSTART:20260801T030000Z
 SUMMARY:Lamont Roach vs William Zepeda
 UID:698a6a58-412e-485c-8c86-9eefb5bd30dc@698a.org
 URL:https://box.live/fights/zepeda-vs-roach/
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/torrez-jr-vs-sanchez/\n📺 Broadcasters: DAZN PPV\n📍 Venue: Pyramids of Giza\, Giza\, Egypt\n⏰ Start Time: Sunday\, 24 May at 04:37 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Oleksandr Usyk vs Rico Verhoeven\n- Hamzah Sheeraz vs Alem Begic\n- Jack Catterall vs Shakhram Giyasov\n- Mizuki Hiruta vs Mai Soliman\n
-DTEND:20260524T000700Z
-LOCATION:Pyramids of Giza\, Giza\, Egypt
-DTSTART:20260523T183700Z
-SUMMARY:Frank Sanchez vs Richard Torrez Jr
-UID:7dab5f7b-ba19-4f5b-a69c-fc83fb59ff9f@7dab.org
-URL:https://box.live/fights/torrez-jr-vs-sanchez/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/pauls-vs-goldsmith/\n📺 Broadcasters: TBA\n📍 Venue: St Marys Stadium\, Southampton\, United Kingdom\n⏰ Start Time: Sunday\, 21 Jun at 07:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Ryan Garner vs Michael Magnesi\n- Lewis Edmondson vs Lyndon Arthur\n
