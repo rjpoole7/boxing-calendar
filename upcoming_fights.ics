@@ -29,6 +29,15 @@ UID:496c7a35-c424-4ea8-a2ea-37ec0c06daa3@496c.org
 URL:https://box.live/fights/gonzalez-vs-alameda/
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/charlo-vs-mazoudier/\n📺 Broadcasters: Amazon Prime PPV\n📍 Venue: Afterpay Arena\, Sydney\, Australia\n⏰ Start Time: Sunday\, 26 Jul at 12:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Errol Spence Jr vs Tim Tszyu\n- Stephen Fulton vs Liam Wilson\n
+DTEND:20260726T073000Z
+LOCATION:Afterpay Arena\, Sydney\, Australia
+DTSTART:20260726T020000Z
+SUMMARY:Jermall Charlo vs Koen Mazoudier
+UID:1df8def0-6cd0-4e85-ac72-8f6ff291fa1a@1df8.org
+URL:https://box.live/fights/charlo-vs-mazoudier/
+END:VEVENT
+BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/bell-vs-cruz/\n📺 Broadcasters: DAZN\n📍 Venue: Dignity Health Sports Park\, Carson\, United States\n⏰ Start Time: Sunday\, 19 Jul at 12:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Andy Cruz vs Albert Bell\n- Albert Gonzalez vs Aaron Alameda\n
 DTEND:20260719T073000Z
 LOCATION:Dignity Health Sports Park\, Carson\, United States
@@ -101,6 +110,15 @@ UID:0051d58e-95c0-4e53-93b3-8fbfb3bec5b3@0051.org
 URL:https://box.live/fights/mayweather-vs-pacquiao-ii/
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/fulton-vs-wilson/\n📺 Broadcasters: Amazon Prime PPV\n📍 Venue: Afterpay Arena\, Sydney\, Australia\n⏰ Start Time: Sunday\, 26 Jul at 01:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Errol Spence Jr vs Tim Tszyu\n- Jermall Charlo vs Koen Mazoudier\n
+DTEND:20260726T083000Z
+LOCATION:Afterpay Arena\, Sydney\, Australia
+DTSTART:20260726T030000Z
+SUMMARY:Stephen Fulton vs Liam Wilson
+UID:8f9b28ca-e0c4-49b1-aa21-790ce664a554@8f9b.org
+URL:https://box.live/fights/fulton-vs-wilson/
+END:VEVENT
+BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/eubank-vs-papot/\n📺 Broadcasters: DAZN\n📍 Venue: Copper Box Arena\, London\, United Kingdom\n⏰ Start Time: Sunday\, 19 Jul at 07:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
 DTEND:20260719T023000Z
 LOCATION:Copper Box Arena\, London\, United Kingdom
@@ -126,6 +144,15 @@ DTSTART:20260808T210000Z
 SUMMARY:Troy Williamson vs Callum Simpson
 UID:b33b30fe-8287-4ebc-bce1-4f7a17d58f87@b33b.org
 URL:https://box.live/fights/williamson-vs-simpson-ii/
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/robinson-vs-thibeault/\n📺 Broadcasters: ESPN+\, Sky Sports Main Event\n📍 Venue: Caribe Royale Orlando\, Orlando\, United States\n⏰ Start Time: Sunday\, 09 Aug at 12:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Cherneka Johnson vs Dina Thorslund\n
+DTEND:20260809T073000Z
+LOCATION:Caribe Royale Orlando\, Orlando\, United States
+DTSTART:20260809T020000Z
+SUMMARY:Desley Robinson vs Tammara Thibeault
+UID:44a21803-daca-4ae8-8245-552973c64863@44a2.org
+URL:https://box.live/fights/robinson-vs-thibeault/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/canelo-vs-mbilli/\n📺 Broadcasters: DAZN PPV\n📍 Venue: Riyadh\, Saudi Arabia\n⏰ Start Time: Saturday\, 12 Sep at 01:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
@@ -182,15 +209,6 @@ UID:66407523-1103-4a54-b039-20b412289e1d@6640.org
 URL:https://box.live/fights/johnson-vs-guerrero/
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/gallardo-vs-bisla/\n📺 Broadcasters: DAZN\n📍 Venue: Frontwave Arena\, Oceanside\, United States\n⏰ Start Time: Sunday\, 21 Jun at 12:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Yair Benjamin Gallardo Lozano vs Buneet Bisla\n
-DTEND:20260621T073000Z
-LOCATION:Frontwave Arena\, Oceanside\, United States
-DTSTART:20260621T020000Z
-SUMMARY:Oscar Collazo vs Joey Canoy
-UID:ecd3860c-c018-4367-92e6-2048383760ce@ecd3.org
-URL:https://box.live/fights/gallardo-vs-bisla/
-END:VEVENT
-BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/muratalla-vs-conceicao/\n📺 Broadcasters: DAZN\n📍 Venue: The Theater at Virgin Hotels\, Las Vegas\, United States\n⏰ Start Time: Saturday\, 01 Aug at 12:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Lamont Roach vs William Zepeda\n
 DTEND:20260801T073000Z
 LOCATION:The Theater at Virgin Hotels\, Las Vegas\, United States
@@ -198,15 +216,6 @@ DTSTART:20260801T020000Z
 SUMMARY:Raymond Muratalla vs Robson Conceicao
 UID:da7f3026-1c11-41ea-a10d-750ad2a15d1f@da7f.org
 URL:https://box.live/fights/muratalla-vs-conceicao/
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/collazo-vs-canoy/\n📺 Broadcasters: DAZN\n📍 Venue: Frontwave Arena\, Oceanside\, United States\n⏰ Start Time: Sunday\, 21 Jun at 01:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
-DTEND:20260621T083000Z
-LOCATION:Frontwave Arena\, Oceanside\, United States
-DTSTART:20260621T030000Z
-SUMMARY:Oscar Collazo vs Joey Canoy
-UID:9bb9bd73-dc19-412d-889e-c3b8ae6bc2ad@9bb9.org
-URL:https://box.live/fights/collazo-vs-canoy/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/taylor-vs-pili/\n📺 Broadcasters: DAZN\n📍 Venue: Croke Park\, Dublin\, Ireland\n⏰ Start Time: Sunday\, 06 Sep at 07:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
@@ -353,15 +362,6 @@ UID:79b73229-3f2d-42fd-8b55-f3b5b1094524@79b7.org
 URL:https://box.live/fights/pauls-vs-goldsmith/
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/wilson-vs-marin/\n📺 Broadcasters: TBA\n📍 Venue: Pat Rafter Arena\, Brisbane\, Australia\n⏰ Start Time: Wednesday\, 24 Jun at 09:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Lewis Crocker vs Liam Paro\n- Demsey McKean vs Liam Talivaa\n
-DTEND:20260624T163000Z
-LOCATION:Pat Rafter Arena\, Brisbane\, Australia
-DTSTART:20260624T110000Z
-SUMMARY:Liam Wilson vs Alexandru Marin
-UID:d0b7b64c-0c04-4bb0-8553-e6a5dde4b9fd@d0b7.org
-URL:https://box.live/fights/wilson-vs-marin/
-END:VEVENT
-BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/mason-vs-cordina/\n📺 Broadcasters: DAZN\n📍 Venue: Wolstein Center\, Cleveland\, United States\n⏰ Start Time: Sunday\, 05 Jul at 01:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Bruce Carrington vs Rene Osvaldo Palacios\n- Delante Johnson vs Christopher Guerrero\n
 DTEND:20260705T083000Z
 LOCATION:Wolstein Center\, Cleveland\, United States
@@ -396,6 +396,15 @@ DTSTART:20260808T030000Z
 SUMMARY:Cherneka Johnson vs Dina Thorslund
 UID:7eade3ec-9d26-4bc1-8d3c-15287b752daa@7ead.org
 URL:https://box.live/fights/johnson-vs-thorslund/
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/collazo-vs-valdez/\n📺 Broadcasters: DAZN\n📍 Venue: Frontwave Arena\, Oceanside\, United States\n⏰ Start Time: Sunday\, 21 Jun at 10:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
+DTEND:20260621T053000Z
+LOCATION:Frontwave Arena\, Oceanside\, United States
+DTSTART:20260621T000000Z
+SUMMARY:Oscar Collazo vs Neider Valdez
+UID:32d6a7b5-e289-4a06-9e9f-b5ee075a760b@32d6.org
+URL:https://box.live/fights/collazo-vs-valdez/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/vargas-vs-mills/\n📺 Broadcasters: DAZN PPV\n📍 Venue: Barclays Center\, Brooklyn\, United States\n⏰ Start Time: Sunday\, 28 Jun at 12:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Xander Zayas vs Jaron ‘Boots’ Ennis\n- Ben Whittaker vs Richard Rivera\n- Jahi Tucker vs Euri Cedeno\n
