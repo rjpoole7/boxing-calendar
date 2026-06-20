@@ -83,22 +83,13 @@ UID:da0d7bbf-03b2-4f0b-9584-11342a017ad3@da0d.org
 URL:https://box.live/fights/pacheco-vs-aleem/
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/navarro-vs-zaren/\n📺 Broadcasters: TBA\n📍 Venue: Hipodromo de la Zarzuela\, Madrid\, Spain\n⏰ Start Time: Saturday\, 20 Jun at 07:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
-DTEND:20260620T023000Z
-LOCATION:Hipodromo de la Zarzuela\, Madrid\, Spain
-DTSTART:20260619T210000Z
-SUMMARY:Jose Luis Navarro Jr vs Oliver Zaren
-UID:db9a29a9-13dc-4a46-8159-9408f6548e42@db9a.org
-URL:https://box.live/fights/navarro-vs-zaren/
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/mayer-vs-cameron/\n📺 Broadcasters: Sky Sports Main Event\, ESPN+\n📍 Venue: bp pulse LIVE Arena\, Birmingham\, United Kingdom\n⏰ Start Time: Sunday\, 30 Aug at 07:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
-DTEND:20260830T023000Z
-LOCATION:bp pulse LIVE Arena\, Birmingham\, United Kingdom
-DTSTART:20260829T210000Z
-SUMMARY:Mikaela Mayer vs Chantelle Cameron
-UID:012fe9a6-77bc-4b90-bb9a-449872aa9a30@012f.org
-URL:https://box.live/fights/mayer-vs-cameron/
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/teraji-vs-gonzalez-2/\n📺 Broadcasters: TBA\n📍 Venue: Kokugikan\, Tokyo\, Japan\n⏰ Start Time: Monday\, 20 Jul at 09:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Riku Masuda vs Daigo Higa\n- Shokichi Iwata vs Erick Badillo\n
+DTEND:20260720T163000Z
+LOCATION:Kokugikan\, Tokyo\, Japan
+DTSTART:20260720T110000Z
+SUMMARY:Kenshiro Teraji vs Israel Gonzalez
+UID:89c12be7-2988-429a-b17f-d36597e53b1a@89c1.org
+URL:https://box.live/fights/teraji-vs-gonzalez-2/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/mayweather-vs-pacquiao-ii/\n📺 Broadcasters: Netflix\n📍 Venue: T-Mobile Arena\, Las Vegas\, United States\n⏰ Start Time: Friday\, 25 Sep at 01:30 PM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
@@ -108,6 +99,15 @@ DTSTART:20260925T033000Z
 SUMMARY:Floyd Mayweather Jr vs Manny Pacquiao
 UID:0051d58e-95c0-4e53-93b3-8fbfb3bec5b3@0051.org
 URL:https://box.live/fights/mayweather-vs-pacquiao-ii/
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/mayer-vs-cameron/\n📺 Broadcasters: Sky Sports Main Event\, ESPN+\n📍 Venue: bp pulse LIVE Arena\, Birmingham\, United Kingdom\n⏰ Start Time: Sunday\, 30 Aug at 07:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
+DTEND:20260830T023000Z
+LOCATION:bp pulse LIVE Arena\, Birmingham\, United Kingdom
+DTSTART:20260829T210000Z
+SUMMARY:Mikaela Mayer vs Chantelle Cameron
+UID:012fe9a6-77bc-4b90-bb9a-449872aa9a30@012f.org
+URL:https://box.live/fights/mayer-vs-cameron/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/fulton-vs-wilson/\n📺 Broadcasters: Amazon Prime PPV\n📍 Venue: Afterpay Arena\, Sydney\, Australia\n⏰ Start Time: Sunday\, 26 Jul at 01:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Errol Spence Jr vs Tim Tszyu\n- Jermall Charlo vs Koen Mazoudier\n
@@ -353,6 +353,15 @@ UID:698a6a58-412e-485c-8c86-9eefb5bd30dc@698a.org
 URL:https://box.live/fights/zepeda-vs-roach/
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/iwata-vs-badillo/\n📺 Broadcasters: TBA\n📍 Venue: Kokugikan\, Tokyo\, Japan\n⏰ Start Time: Monday\, 20 Jul at 08:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Riku Masuda vs Daigo Higa\n- Kenshiro Teraji vs Israel Gonzalez\n
+DTEND:20260720T153000Z
+LOCATION:Kokugikan\, Tokyo\, Japan
+DTSTART:20260720T100000Z
+SUMMARY:Shokichi Iwata vs Erick Badillo
+UID:f3b51c24-ac5c-455e-84eb-6a9f484329b9@f3b5.org
+URL:https://box.live/fights/iwata-vs-badillo/
+END:VEVENT
+BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/pauls-vs-goldsmith/\n📺 Broadcasters: TBA\n📍 Venue: St Marys Stadium\, Southampton\, United Kingdom\n⏰ Start Time: Sunday\, 21 Jun at 07:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Ryan Garner vs Michael Magnesi\n- Lewis Edmondson vs Lyndon Arthur\n
 DTEND:20260621T023000Z
 LOCATION:St Marys Stadium\, Southampton\, United Kingdom
@@ -425,6 +434,15 @@ UID:a13c95e6-3bf1-4a6e-855b-6104f3281830@a13c.org
 URL:https://box.live/fights/nyika-vs-masson/
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/masuda-vs-higa/\n📺 Broadcasters: TBA\n📍 Venue: Kokugikan\, Tokyo\, Japan\n⏰ Start Time: Monday\, 20 Jul at 10:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Kenshiro Teraji vs Israel Gonzalez\n- Shokichi Iwata vs Erick Badillo\n
+DTEND:20260720T173000Z
+LOCATION:Kokugikan\, Tokyo\, Japan
+DTSTART:20260720T120000Z
+SUMMARY:Riku Masuda vs Daigo Higa
+UID:a8eddde0-c381-4a7b-a5ce-ef31d59e8f11@a8ed.org
+URL:https://box.live/fights/masuda-vs-higa/
+END:VEVENT
+BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/joshua-vs-prenga/\n📺 Broadcasters: DAZN\n📍 Venue: Riyadh\, Saudi Arabia\n⏰ Start Time: Sunday\, 26 Jul at 08:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
 DTEND:20260726T033000Z
 LOCATION:Riyadh\, Saudi Arabia
@@ -432,15 +450,6 @@ DTSTART:20260725T220000Z
 SUMMARY:Anthony Joshua vs Kristian Prenga
 UID:76c9b132-a8ad-4db0-98ab-2eee0bf09911@76c9.org
 URL:https://box.live/fights/joshua-vs-prenga/
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/fury-vs-hall/\n📺 Broadcasters: DAZN PPV\n📍 Venue: AO Arena\, Manchester\, United Kingdom\n⏰ Start Time: Sunday\, 14 Jun at 08:45 AM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
-DTEND:20260614T041500Z
-LOCATION:AO Arena\, Manchester\, United Kingdom
-DTSTART:20260613T224500Z
-SUMMARY:Tommy Fury vs Eddie ‘The Beast’ Hall
-UID:7a5948aa-8df4-411c-8379-f1d051e0c801@7a59.org
-URL:https://box.live/fights/fury-vs-hall/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/sandoval-vs-lee/\n📺 Broadcasters: Paramount+\, Sky Sports Main Event\, NowTV\, Sky Go App\n📍 Venue: The Cosmopolitan of Las Vegas\, Chelsea Ballroom\, Las Vegas\, United States\n⏰ Start Time: Monday\, 29 Jun at 11:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Omar Trinidad vs Jerwin Ancajas\n
@@ -477,6 +486,15 @@ DTSTART:20260628T030000Z
 SUMMARY:Xander Zayas vs Jaron ‘Boots’ Ennis
 UID:f97017d4-b0e5-4fa6-99cf-22916b4ea7ff@f970.org
 URL:https://box.live/fights/ennis-vs-zayas/
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:🔗 Fight Info: https://box.live/fights/fury-vs-hall/\n📺 Broadcasters: DAZN PPV\n📍 Venue: AO Arena\, Manchester\, United Kingdom\n⏰ Start Time: Sunday\, 14 Jun at 08:45 AM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
+DTEND:20260614T041500Z
+LOCATION:AO Arena\, Manchester\, United Kingdom
+DTSTART:20260613T224500Z
+SUMMARY:Tommy Fury vs Eddie ‘The Beast’ Hall
+UID:7a5948aa-8df4-411c-8379-f1d051e0c801@7a59.org
+URL:https://box.live/fights/fury-vs-hall/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/crocker-vs-paro/\n📺 Broadcasters: TBA\n📍 Venue: Pat Rafter Arena\, Brisbane\, Australia\n⏰ Start Time: Wednesday\, 24 Jun at 10:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Liam Wilson vs Alexandru Marin\n- Demsey McKean vs Liam Talivaa\n
