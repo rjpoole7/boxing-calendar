@@ -191,15 +191,6 @@ UID:7d385865-b76b-4675-a89e-e51a3b99bf1e@7d38.org
 URL:https://box.live/fights/walsh-vs-denny/
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/garner-vs-magnesi/\n📺 Broadcasters: DAZN\n📍 Venue: St Marys Stadium\, Southampton\, United Kingdom\n⏰ Start Time: Sunday\, 21 Jun at 07:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Lewis Edmondson vs Lyndon Arthur\n- Brad Pauls vs Bradley Goldsmith\n
-DTEND:20260621T023000Z
-LOCATION:St Marys Stadium\, Southampton\, United Kingdom
-DTSTART:20260620T210000Z
-SUMMARY:Ryan Garner vs Michael Magnesi
-UID:e99c2a7a-98fa-4e4b-af8a-cc3d198e633e@e99c.org
-URL:https://box.live/fights/garner-vs-magnesi/
-END:VEVENT
-BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/johnson-vs-guerrero/\n📺 Broadcasters: DAZN\n📍 Venue: Wolstein Center\, Cleveland\, United States\n⏰ Start Time: Sunday\, 05 Jul at 11:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Bruce Carrington vs Rene Osvaldo Palacios\n
 DTEND:20260705T063000Z
 LOCATION:Wolstein Center\, Cleveland\, United States
@@ -281,15 +272,6 @@ UID:3609470a-9798-4489-bc68-27edf3c42b1b@3609.org
 URL:https://box.live/fights/berlanga-vs-butler/
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/edmondson-vs-arthur/\n📺 Broadcasters: DAZN\n📍 Venue: St Marys Stadium\, Southampton\, United Kingdom\n⏰ Start Time: Sunday\, 21 Jun at 06:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Ryan Garner vs Michael Magnesi\n- Brad Pauls vs Bradley Goldsmith\n
-DTEND:20260621T013000Z
-LOCATION:St Marys Stadium\, Southampton\, United Kingdom
-DTSTART:20260620T200000Z
-SUMMARY:Lewis Edmondson vs Lyndon Arthur
-UID:f84dacb2-a002-461f-860b-d3091661a91d@f84d.org
-URL:https://box.live/fights/edmondson-vs-arthur/
-END:VEVENT
-BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/england-vs-zaurbek/\n📺 Broadcasters: TBA\n📍 Venue: Perth\, Western Australia\, Australia\n⏰ Start Time: Friday\, 17 Jul at 10:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
 DTEND:20260717T173000Z
 LOCATION:Perth\, Western Australia\, Australia
@@ -297,15 +279,6 @@ DTSTART:20260717T120000Z
 SUMMARY:Jackson Jon England vs Sultan Zaurbek
 UID:6ee43bd1-fede-46b5-aa01-97316b0eb5d7@6ee4.org
 URL:https://box.live/fights/england-vs-zaurbek/
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/mercado-vs-burgos/\n📺 Broadcasters: DAZN\n📍 Venue: Motor City Casino\, Detroit\n⏰ Start Time: Saturday\, 20 Jun at 09:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Ernesto Mercado vs Juan Carlos Burgos\n
-DTEND:20260620T043000Z
-LOCATION:Motor City Casino\, Detroit
-DTSTART:20260619T230000Z
-SUMMARY:Ashton Sylve vs Joseph ‘Jo Jo’ Diaz
-UID:0938f212-9a88-4fd6-ba2f-54fb9a58ae50@0938.org
-URL:https://box.live/fights/mercado-vs-burgos/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/gassiev-vs-yoka/\n📺 Broadcasters: YouTube\n📍 Venue: VTB Arena\, Moscow\, Russia\n⏰ Start Time: Sunday\, 12 Jul at 06:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Artem Suslenkov vs Joe Joyce\n
@@ -362,15 +335,6 @@ UID:f3b51c24-ac5c-455e-84eb-6a9f484329b9@f3b5.org
 URL:https://box.live/fights/iwata-vs-badillo/
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/pauls-vs-goldsmith/\n📺 Broadcasters: TBA\n📍 Venue: St Marys Stadium\, Southampton\, United Kingdom\n⏰ Start Time: Sunday\, 21 Jun at 07:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- Ryan Garner vs Michael Magnesi\n- Lewis Edmondson vs Lyndon Arthur\n
-DTEND:20260621T023000Z
-LOCATION:St Marys Stadium\, Southampton\, United Kingdom
-DTSTART:20260620T210000Z
-SUMMARY:Brad Pauls vs Bradley Goldsmith
-UID:79b73229-3f2d-42fd-8b55-f3b5b1094524@79b7.org
-URL:https://box.live/fights/pauls-vs-goldsmith/
-END:VEVENT
-BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/mason-vs-cordina/\n📺 Broadcasters: DAZN\n📍 Venue: Wolstein Center\, Cleveland\, United States\n⏰ Start Time: Sunday\, 05 Jul at 01:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Bruce Carrington vs Rene Osvaldo Palacios\n- Delante Johnson vs Christopher Guerrero\n
 DTEND:20260705T083000Z
 LOCATION:Wolstein Center\, Cleveland\, United States
@@ -378,15 +342,6 @@ DTSTART:20260705T030000Z
 SUMMARY:Abdullah Mason vs Joe Cordina
 UID:54cb1d64-133d-42ea-81cd-86d20dc21abe@54cb.org
 URL:https://box.live/fights/mason-vs-cordina/
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/sylve-vs-diaz/\n📺 Broadcasters: DAZN\n📍 Venue: Motor City Casino\, Detroit\, United States\n⏰ Start Time: Saturday\, 20 Jun at 01:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Mercado vs Burgos\n
-DTEND:20260620T083000Z
-LOCATION:Motor City Casino\, Detroit\, United States
-DTSTART:20260620T030000Z
-SUMMARY:Ashton Sylve vs Joseph ‘Jo Jo’ Diaz
-UID:649e8f27-4950-46f2-b571-365826a34914@649e.org
-URL:https://box.live/fights/sylve-vs-diaz/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/anton-vs-hernandez/\n📺 Broadcasters: ProBox TV\n📍 Venue: National Orange Show\, San Bernardino\, United States\n⏰ Start Time: Sunday\, 19 Jul at 12:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Adelaida Ruiz vs Ginny Fuchs\n- Ruben Eduardo Aguilar vs Tre’Sean Wiggins\n
@@ -405,15 +360,6 @@ DTSTART:20260808T030000Z
 SUMMARY:Cherneka Johnson vs Dina Thorslund
 UID:7eade3ec-9d26-4bc1-8d3c-15287b752daa@7ead.org
 URL:https://box.live/fights/johnson-vs-thorslund/
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:🔗 Fight Info: https://box.live/fights/collazo-vs-valdez/\n📺 Broadcasters: DAZN\n📍 Venue: Frontwave Arena\, Oceanside\, United States\n⏰ Start Time: Sunday\, 21 Jun at 10:00 AM AEST\n--------------------\n🥊 Undercard Fights:\n- No undercards listed.\n
-DTEND:20260621T053000Z
-LOCATION:Frontwave Arena\, Oceanside\, United States
-DTSTART:20260621T000000Z
-SUMMARY:Oscar Collazo vs Neider Valdez
-UID:32d6a7b5-e289-4a06-9e9f-b5ee075a760b@32d6.org
-URL:https://box.live/fights/collazo-vs-valdez/
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:🔗 Fight Info: https://box.live/fights/vargas-vs-mills/\n📺 Broadcasters: DAZN PPV\n📍 Venue: Barclays Center\, Brooklyn\, United States\n⏰ Start Time: Sunday\, 28 Jun at 12:00 PM AEST\n--------------------\n🥊 Undercard Fights:\n- Xander Zayas vs Jaron ‘Boots’ Ennis\n- Ben Whittaker vs Richard Rivera\n- Jahi Tucker vs Euri Cedeno\n
